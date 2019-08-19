@@ -350,5 +350,80 @@
 >
 > 
 
+## 异步redux
 
+> 在没有中间件的情况下 如下运行会报错
+>
+> ```js
+> import { createStore,applyMiddleware } from 'redux'
+> import thunk from 'redux-thunk'
+> 
+> let initState = [{value:111}];
+> 
+> let action = data =>  ({
+> type: 'ADD',
+> value: data
+> })
+> 
+> let values = (state=[],action) => {
+> switch(action.type) {
+>  case 'ADD' : 
+>    return [...state,{value:action.value}]
+>    break;
+>  default: 
+>    return state
+> }
+> 
+> }
+> const store = createStore(
+>  values,
+>  initState,
+>  // applyMiddleware(thunk)
+> )
+> 
+> console.log(store.getState())
+> 
+> function loginAction(data){
+> return (dispatch) => {
+>        setTimeout(function() {
+>            dispatch(action(data))
+>        }, 2000);
+> }
+> } 
+> 
+> store.dispatch(loginAction(333))
+> 
+> // 报错 Actions must be plain objects. Use custom middleware for async action 
+> // 操作必须是纯对象。使用自定义中间件进行异步操作
+> ```
+>
+> ### 引入redux-thunk ，这样就可以让dispatch接受的不仅仅是一个action对象，还可以是一个函数，例如异步的函数
+
+## 延伸 （关于异步的一些知识）
+
+1. ### fetch的用法
+
+   ```js
+   fetch(url).then(function(response) {
+     return response.json();
+   }).then(function(data) {
+     console.log(data);
+   }).catch(function(e) {
+     console.log("Oops, error");
+   });
+   ```
+
+2. ### generator的用法
+
+   ```js
+   function * gen(x) {
+     let y = yield x+2
+     console.log(y)
+   }
+   var g = gen(1)
+   console.log(g.next())    // {value: 3,done: false}
+   console.log(g.next(6))    // 6   // {value: undefined,done: true}
+   ```
+
+## 
 
