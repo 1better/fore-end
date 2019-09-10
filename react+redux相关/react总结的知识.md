@@ -73,7 +73,7 @@ https://blog.csdn.net/qq_36138652/article/details/97632390
      constructor(props) {
        super(props)
      }
-     fatherGo = () =>{
+     fatherGo = () => {
        this.props.go()
      }
      render() {

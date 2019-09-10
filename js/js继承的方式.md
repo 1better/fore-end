@@ -11,7 +11,7 @@
 > }
 > 
 > function Man(name,age) {
->   Person.apply(this,[name,age])
+>   	Person.apply(this,[name,age])
 > }
 > 
 > // man.showName is not a function 构造函数不能继承原型上的方法

@@ -127,5 +127,35 @@ MyPromise.all = arr => {
 // 考虑异步
 ```
 
+### *promise.race* 
+
+```js
+MyPromise.race = (arr) =>  {
+  let result = []
+  let raceTime = 0
+  return new MyPromise(reslove=>{
+    arr.forEach( (p,i) => {
+      if(p instanceof MyPromise) {
+        p.then(data=>next(i,data))
+      }else {
+        next(i,p)
+      }
+    })
+    function next(i,data) {
+    	result[i] = data
+      if(raceTime==0) {
+        for(let i=0;i<result.length;i++) {
+          if(result[i]) {
+            reslove(result[i])
+            raceTime ++
+            break
+          }
+        }
+      } 
+  	}
+  })
+}
+```
+
 
 

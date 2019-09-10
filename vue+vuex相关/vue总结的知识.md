@@ -304,20 +304,20 @@
 > > </template>
 > > <script>
 > >  var vm = new Vue({
-> >    el: '#app',
-> >    data: {
-> >      msg: '我是父组件通过slot插入的内容'
-> >    },
-> >    components: {
-> >      Child:{
-> >        template:'#Child',
-> >        data() {
-> >          return {
-> >            msg: 111
-> >          }   
+> >      el: '#app',
+> >      data: {
+> >        msg: '我是父组件通过slot插入的内容'
+> >      },
+> >      components: {
+> >        Child:{
+> >          template:'#Child',
+> >          data() {
+> >            return {
+> >              msg: 111
+> >            }   
+> >          }
 > >        }
 > >      }
-> >    }
 > >  })
 > > 
 > > </script>
@@ -408,13 +408,13 @@
 > > 
 > > <!--父组件-->
 > > <template>
-> > <div>
-> > 	我是作用域插槽
-> > <slot-three>
-> > <template slot-scope="user">
-> > <div v-for="item in user.data" :key="item.id">
-> > {{item}}
-> > </div>
+> >   <div>
+> >     我是作用域插槽
+> >   	<slot-three>
+> >   	<template slot-scope="user">
+> >   	<div v-for="item in user.data" :key="item.id">
+> >   	{{item}}
+> >   </div>
 > > </template>
 > > </slot-three>
 > > </div>

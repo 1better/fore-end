@@ -2,7 +2,7 @@
 
 ```js
 // 函数需要这样命名
-function* a() {}
+function *a() {}
 // next方法会走到没有下一个yield的地方
 function *go() {
   console.log('开始')

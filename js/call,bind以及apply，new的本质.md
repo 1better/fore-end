@@ -35,13 +35,13 @@
 
 > ```js
 > Function.prototype.myBind = function(self,...arg) {
->   self = self || window
->   self.fn = this
->   return function(...arg2) {
->     arg = arg.concat(arg2)
->     var result = self.fn(...arg)
->     return result
->   }
+>     self = self || window
+>     self.fn = this
+>     return function(...arg2) {
+>       arg = arg.concat(arg2)
+>       var result = self.fn(...arg)
+>       return result
+>     }
 > }
 > 
 > var f = function() {
