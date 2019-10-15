@@ -21,7 +21,7 @@
 ## *js如何获取宽高*
 
 > 1. dom.style.width/height.  只能获取内联样式的宽高
-> 2. dom.currentStyle.width/height  哪一种方式都可以获取，只支持id
+> 2. dom.currentStyle.width/height  哪一种方式都可以获取，只支持ie
 > 3. Window.getComputedStyle(dom).width/height  和2类似， 兼容多浏览器
 > 4. dom.getBoundingClientRect().width 根据元素的绝对位置来获取
 > 5. dom.offsetWidth/offsetHeight  兼容性最好

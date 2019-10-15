@@ -13,19 +13,18 @@
 > ```js
 > let p = new Promise((reslove,reject)=>{
 >   setTimeout(
->     ()=>{reslove(1)},5000
->   )
-> })
+>     ()=>{reslove(1)},5000)
+>   })
 > 
 > p.then(data=>console.log(data))
 > 
 > // new 一个 Promise对象 reslove或者reject数据
 > // then 方法 第一个参数打印成功的数据，第二个参数打印失败的数据
 > ```
->
-> #### 方法
->
-> > catch 添加一个拒绝(rejection) 回调到当前 promise, 返回一个新的promise
+> 
+>#### 方法
+> 
+>> catch 添加一个拒绝(rejection) 回调到当前 promise, 返回一个新的promise
 > >
 > > Promise.all方法  接受一个promise对象数组，这些数组的数据都执行完返回一个数组(包含的是成功的数据)
 > >

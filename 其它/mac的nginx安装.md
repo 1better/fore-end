@@ -35,3 +35,11 @@
 >
 >  
 
+## 查看log日志
+
+```js
+# 创建logs文件夹 每次运行报错都会在logs的error.log都会显示日志
+
+error_log  /usr/local/etc/logs/error.log;
+```
+

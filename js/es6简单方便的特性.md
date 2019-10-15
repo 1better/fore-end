@@ -33,6 +33,22 @@ let arr = [1,3,5]
 console.log(...arr) // 1 3 5
 ```
 
+## *…的两个作用*
+
+```js
+// 打包
+function (...arr) 
+//   可以这样写来进行调用
+function (a1,a2,a3)
+
+// 解包
+const arr = [1,2,3]
+//   可以这样写来进行合并 
+const arr2 = [0,...arr,4]
+```
+
+
+
 ## *解构赋值*
 
 ```js

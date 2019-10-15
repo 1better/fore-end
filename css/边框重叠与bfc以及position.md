@@ -67,3 +67,9 @@
 >
 > margin: auto 是根据left与right 相距的距离来自适应居中的(top bottom类似)
 
+## position和float之间会相互影响吗
+
+1. 如果display为none，这时候不产生盒子，所以会忽略position和float
+2. 如果position的值为absolute或fixed，float会被转换为none
+3. 如果position不是绝对布局，这时，如果float不为none或者该元素是该元素。
+4. 如果position不是绝对布局，并且float为none不浮动，且不是跟元素，display就取设置值

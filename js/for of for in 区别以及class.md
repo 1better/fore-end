@@ -69,7 +69,7 @@ class Person {
   getName() {
     console.log(this) 
     console.log(this.name())
-  }
+  } 
   name() {
     return '测试name'
   }
